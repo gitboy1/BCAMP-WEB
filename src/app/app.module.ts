@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
