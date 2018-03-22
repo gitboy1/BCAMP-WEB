@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
   <mat-card class="mat-elevation-z8">
@@ -9,11 +8,13 @@
       <button mat-button *ngIf="showSide">THIS</button>
       <button mat-button *ngIf="showSide">IS</button>
       <button mat-button *ngIf="showSide">NAVBAR</button>
+      <span class="float-right"></span>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button mat-button type="submit">Search</button>
+        <input class="form-control mr-sm-2 input-sm" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
+    <!-- button row ends-->
 
   </mat-card>
 
