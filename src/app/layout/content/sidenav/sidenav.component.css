@@ -34,49 +34,23 @@ a, a:hover, a:focus {
 }
 
 
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background: #6d7fcc;
-}
-
-.sidenav ul li a {
-  list-style-type: none;
-  padding: 10px;
-  padding-left: 20px;
-  font-size: 1.1em;
-  display: block;
-}
-
-.sidenav ul li a:hover {
-  color: black;
-  background: #fff;
-}
-
-mat-list-item {
-  /*font-family: 'Poppins', sans-serif;*/
-  font-weight: 300;
-  line-height: 1.7em;
-  color: white;
-}
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
 .content {
   height: 90vh;
-  border: 2px solid darkblue;
+  width: 100%;
 }
 
 .content-header{
-  width: 100%;
   height: 30px;
   padding: 20px;
 }
 
 .asset_table{
-  width: 100%;
   margin-top: 50px;
+  padding: 20px;
   height: 500px;
-  border: 2px solid blue;
+
 }
 
