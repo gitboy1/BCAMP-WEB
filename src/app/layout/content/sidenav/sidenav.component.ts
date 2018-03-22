@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  showSide = false;
   filters = [
     {value: 'printer-0', viewValue: 'Printers'},
     {value: 'keyboard-1', viewValue: 'Laptops'},
@@ -17,6 +18,9 @@ export class SidenavComponent implements OnInit {
     // {value: 'backup-5', viewValue: 'Backup Servers'},
     // {value: 'physical-5', viewValue: 'Physical Servers'},
   ];
+  toggleSide(): void {
+    this.showSide = !this.showSide;
+  }
 
   constructor() { }
 

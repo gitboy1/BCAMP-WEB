@@ -21,6 +21,7 @@ a, a:hover, a:focus {
 
 .wrapper{
   width: 100%;
+  background: white;
 }
 
 /* ---------------------------------------------------
@@ -30,7 +31,11 @@ a, a:hover, a:focus {
   padding: 30px;
   background: #6c757d;
   color: white;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  /*border: 1px solid rgba(0, 0, 0, 0.5);*/
+}
+
+.sidenav p {
+  color: white;
 }
 
 

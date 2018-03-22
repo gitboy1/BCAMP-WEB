@@ -1,6 +1,6 @@
 
 <mat-drawer-container class="wrapper" autosize>
-  <mat-drawer #drawer class="sidenav" color="accent" mode="side">
+  <mat-drawer #drawer class="sidenav" mode="side">
     <div class="sidebar-header">
       <h2>Manager <br/> Options</h2>
     </div>
@@ -21,20 +21,24 @@
              />
       <mat-hint align="start"><strong>Asset Name Only</strong> </mat-hint>
     </mat-form-field>
+    <br>
+    <br>
+    <p><a href="#">Print Report</a> </p>
+    <p><a href="#">Retired</a> </p>
 
-    <mat-list>
-      <mat-list-item>Print Report</mat-list-item>
-      <mat-list-item>Retired</mat-list-item>
-    </mat-list>
 
   </mat-drawer>
 
   <div class="content">
     <div class="content-header">
       <button type="button"
-              mat-button (click)="drawer.toggle()">
+              mat-raised-button (click)="drawer.toggle()">
               Side Panel
       </button>
+      <!--<button class="btn btn-primary"-->
+              <!--(click)='toggleSide'>-->
+          <!--{{showSide ? 'Hide' : 'Show'}} Side-->
+      <!--</button>-->
       <br>
       <br>
       <mat-divider></mat-divider>
