@@ -7,6 +7,7 @@ import {MaterialModule} from './Shared/material.module';
 import {SidenavComponent} from './layout/content/sidenav/sidenav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { DetailTableComponent } from './layout/content/detail-table/detail-table.component';
 
 
 
@@ -14,7 +15,9 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
   declarations: [
     AppComponent,
     SidenavComponent,
-    NavbarComponent
+    NavbarComponent,
+    DetailTableComponent,
+    Tedious,
   ],
   imports: [
     BrowserModule,
