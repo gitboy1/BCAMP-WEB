@@ -4,13 +4,21 @@
 
   <mat-card class="mat-elevation-z8">
     <div class="button-row">
-      <button mat-button>BCAMP</button>
-      <button mat-button>THIS</button>
-      <button mat-button>IS</button>
-      <button mat-button>NAVBAR</button>
+      <button mat-button
+              (click)="showButton()">BCAMP</button>
+      <button mat-button *ngIf="showSide">THIS</button>
+      <button mat-button *ngIf="showSide">IS</button>
+      <button mat-button *ngIf="showSide">NAVBAR</button>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button mat-button type="submit">Search</button>
+      </form>
     </div>
+
   </mat-card>
 
+
+<div class="fill"></div>
 
 
 
