@@ -1,0 +1,54 @@
+
+<mat-drawer-container class="wrapper" autosize>
+  <mat-drawer #drawer class="sidenav" color="accent" mode="side">
+    <div class="sidebar-header">
+      <h2>Manager <br/> Options</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <br/>
+    <mat-form-field>
+      <mat-select placeholder="Filter By:">
+        <mat-option *ngFor="let filter of filters" [value]="filter.value">
+          {{filter.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field>
+      <input matInput placeholder = "Search"
+             type = "text"
+             />
+      <mat-hint align="start"><strong>Asset Name Only</strong> </mat-hint>
+    </mat-form-field>
+
+    <mat-list>
+      <mat-list-item>Print Report</mat-list-item>
+      <mat-list-item>Retired</mat-list-item>
+    </mat-list>
+
+
+
+  </mat-drawer>
+
+  <div class="content">
+    <div class="content-header">
+      <button type="button"
+              mat-button (click)="drawer.toggle()">
+              Side Panel
+      </button>
+    </div>
+    <br/>
+   <mat-divider></mat-divider>
+    <!--<div class="asset_table">-->
+      <!--<p>This is where the asset table goes</p>-->
+    <!--</div>-->
+
+
+
+
+  </div>
+
+
+</mat-drawer-container>
+
