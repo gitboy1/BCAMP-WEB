@@ -17,7 +17,6 @@ import { DetailTableComponent } from './layout/content/detail-table/detail-table
     SidenavComponent,
     NavbarComponent,
     DetailTableComponent,
-    Tedious,
   ],
   imports: [
     BrowserModule,
