@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Globals} from '../../../Shared/globals';
 
 @Component({
   selector: 'app-detail-table',
   templateUrl: './detail-table.component.html',
+  providers: [ Globals ],
   styleUrls: ['./detail-table.component.css']
 })
 export class DetailTableComponent {
