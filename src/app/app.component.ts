@@ -8,5 +8,5 @@ import { Globals } from './Shared/globals';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private globals: Globals){}
+  constructor(private globals: Globals) {}
 }

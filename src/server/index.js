@@ -40,7 +40,12 @@ function queryDatabase() {
 
   request.on('row', function (columns) {
     columns.forEach(function (column) {
-      console.log("%s\t%s", column.metadata.colName, column.value);
+      var i = 0;
+      while(i <= row.length) {
+        console.log("%s/t%s",column.value);
+        i++;
+      }
+      /*console.log("%s\t%s", column.metadata.colName, column.value);*/
     });
   });
   connection.execSql(request);

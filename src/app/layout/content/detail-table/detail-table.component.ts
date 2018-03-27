@@ -1,7 +1,7 @@
 ///<reference path="../../../../server/server.js"/>
 import { Component, OnInit } from '@angular/core';
 import { Globals } from '../../../Shared/globals';
-import { getAllAssets } from '../../../../server/server.js';
+/*import { getAllAssets } from '../../../../server/server.js';*/
 
 @Component({
   selector: 'app-detail-table',
@@ -11,7 +11,7 @@ import { getAllAssets } from '../../../../server/server.js';
 })
 export class DetailTableComponent {
   displayedColumns = ['assetId', 'serialNum', 'location', 'type', 'userId'];
-  dataSource = ELEMENT_DATA;
+  /*dataSource = ELEMENT_DATA;*/
 }
 
 export interface Asset {
@@ -33,9 +33,10 @@ export interface Asset {
 }
 
 
-const ELEMENT_DATA: Asset[] = getAllAssets();
+/*const ELEMENT_DATA: Asset[] = getAllAssets();*/
 
-/*const ELEMENT_DATA: Element[] = [
+/*
+const ELEMENT_DATA: Element[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -56,4 +57,5 @@ const ELEMENT_DATA: Asset[] = getAllAssets();
   {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
   {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
-];*/
+];
+*/

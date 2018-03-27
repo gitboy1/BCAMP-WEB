@@ -20,37 +20,20 @@ connection.on('connect', function (err) {
 var Request = require('tedious').Request;
 var TYPES = require('tedious').TYPES;
 
-let request;
-
-class Asset {
-  constructor(temp) {
-    temp[0],
-    temp[1],
-    temp[2],
-    temp[3],
-    temp[4],
-    temp[5],
-    temp[6],
-    temp[7],
-    temp[8],
-    temp[9],
-    temp[10],
-    temp[11],
-    temp[12],
-    temp[13],
-    temp[14];
-  }
-}
+var request;
 
 
-export function getAssets() {
+
+
+
+function getAssets() {
   request = new Request("SELECT * FROM Assets_Table", function (err) {
     if (err) {
       console.log(err);
     }
   });
-  let result = "";
-  let temp = [];
+  var result = "";
+  var temp = [];
   request.on('row', function (columns) {
     columns.forEach(function (column) {
       result += column.value + " ";
@@ -60,8 +43,8 @@ export function getAssets() {
     console.log(result);
     assets.push(temp);
     //reinitialize result to empty
-      let asset = new Asset(temp);
-      assets.push(asset);
+      /*var asset = new Asset(temp);*/
+      /*assets.push(asset);*/
       temp = [];
       result = "";
     console.log();
@@ -85,7 +68,6 @@ function insertStatement() {
   //request.addParameter('FIRST_NAME', TYPES.NVarChar, 'SQL Server Express 2014');
   connection.execSql(request);
 }
-
-export function getAllAssets(){
+  function getAllAssets(){
   return assets;
 }

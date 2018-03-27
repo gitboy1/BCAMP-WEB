@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import {
   MatButtonModule, MatCardModule,
   MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatListModule, MatTabsModule,
-
 } from '@angular/material';
 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
