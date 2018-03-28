@@ -31,7 +31,7 @@ export interface Asset {
   brand: string;
   toner: string;
 }
-const ELEMENT_DATA: Asset[] = data.registrations.assets;
+const ELEMENT_DATA = (<any>data).registrations.assets;
 
 
 /*
