@@ -11,17 +11,15 @@ const connection = new Connection(config);
 //initialize registration object from Server
 
 const registrations = {
-  assets: [],
-  users: []
+  registrations: {
+    assets: [],
+    users: []
+  }
 };
 
 connection.on('connect', function (err) {
   console.log("Connected to Server");
-  //insertStatement();
-  /*executeStatement("SELECT * FROM Assets_Table\n" +
-    "INNER JOIN Users_Table ON Assets_Table.USERID = Users_Table.ID;");*/
   getAssets();
-  /*connection.close();*/
 });
 
 const Request = require('tedious').Request;
@@ -29,7 +27,7 @@ const TYPES = require('tedious').TYPES;
 
 let request;
 
-function getAssets(callback) {
+function getAssets() {
   request = new Request("SELECT * FROM Assets_Table;", function (err) {
     if (err) {
       console.log(err);
@@ -46,7 +44,7 @@ function getAssets(callback) {
       temp.push(column.value);
     });
     console.log(result);
-    registrations.assets.push({
+    registrations.registrations.assets.push({
       "id": temp[0],
       "assetId": temp[1],
       "serialNum": temp[2],
@@ -64,11 +62,15 @@ function getAssets(callback) {
       "toner": temp[14]
     });
       json = JSON.stringify(registrations);
-    //reinitialize result and temp to empty
       temp = [];
       result = "";
 });
   connection.execSql(request);
+
+  request.on('requestCompleted',function(){
+    getUsers()
+  });
+
 
   request.on('doneProc', function (rowCount) {
     console.log(rowCount + ' rows returned');
@@ -78,7 +80,42 @@ function getAssets(callback) {
 }//end executeStatement
 
 function getUsers() {
+  request = new Request("SELECT * FROM Users_Table;", function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+  let result = "";
+  let temp = [];
+  let json;
+  let rowCount;
+  request.on('row', function (columns) {
+    rowCount++;
+    columns.forEach(function (column) {
+      result += column.value + " ";
+      temp.push(column.value);
+    });
+    console.log(result);
+    registrations.registrations.users.push({
+      "id": temp[0],
+      "firstName": temp[1],
+      "lastName": temp[2],
+      "userName": temp[3],
+      "email": temp[4],
+      "location": temp[5],
+      "office": temp[6],
+      "department": temp[7],
+    });
+    json = JSON.stringify(registrations);
+    temp = [];
+    result = "";
+  });
+  connection.execSql(request);
 
+  request.on('doneProc', function (rowCount) {
+    console.log(rowCount + ' rows returned');
+    fs.writeFile('registration.json', json);
+  });
 }
 function insertStatement() {
   request = new Request("INSERT INTO Users_Table (FIRST_NAME,LAST_NAME,USERNAME,EMAIL,LOCATION,OFFICE,DEPARTMENT) " +
