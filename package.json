@@ -31,7 +31,8 @@
     "popper": "^1.0.1",
     "rxjs": "^5.5.6",
     "tedious": "^2.3.1",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "server": "latest"
   },
   "devDependencies": {
     "@angular/cli": "^1.7.3",

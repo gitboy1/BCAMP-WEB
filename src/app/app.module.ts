@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {   } from '@types/tedious';
+/*import { tedious  } from '@types/tedious';*/
+import * as data from '../server/registration.json';
 
 
 import { AppComponent } from './app.component';
@@ -16,11 +17,13 @@ import { DetailTableComponent } from './layout/content/detail-table/detail-table
     SidenavComponent,
     NavbarComponent,
     DetailTableComponent,
+    data,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    data,
   ],
   providers: [],
   bootstrap: [AppComponent]

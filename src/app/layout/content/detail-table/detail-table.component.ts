@@ -1,7 +1,6 @@
-///<reference path="../../../../server/server.js"/>
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Globals } from '../../../Shared/globals';
-/*import { getAllAssets } from '../../../../server/server.js';*/
+import * as data from '../../../../server/registration.json';
 
 @Component({
   selector: 'app-detail-table',
@@ -9,9 +8,10 @@ import { Globals } from '../../../Shared/globals';
   providers: [ Globals ],
   styleUrls: ['./detail-table.component.css']
 })
+
 export class DetailTableComponent {
   displayedColumns = ['assetId', 'serialNum', 'location', 'type', 'userId'];
-  /*dataSource = ELEMENT_DATA;*/
+  dataSource = ELEMENT_DATA;
 }
 
 export interface Asset {
@@ -31,9 +31,8 @@ export interface Asset {
   brand: string;
   toner: string;
 }
+const ELEMENT_DATA: Asset[] = data.assets;
 
-
-/*const ELEMENT_DATA: Asset[] = getAllAssets();*/
 
 /*
 const ELEMENT_DATA: Element[] = [
