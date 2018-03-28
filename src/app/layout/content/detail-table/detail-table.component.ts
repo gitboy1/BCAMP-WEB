@@ -10,7 +10,6 @@ import * as data from '../../../../server/registration.json';
 })
 
 export class DetailTableComponent {
-  displayedColumns = ['assetId', 'serialNum', 'location', 'type', 'userId'];
   dataSource = ELEMENT_DATA;
 }
 

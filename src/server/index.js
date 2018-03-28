@@ -8,8 +8,8 @@ const config = {
   options: {encrypt: true, database: 'bcampDb'}
 };
 const connection = new Connection(config);
-//initialize registration object from Server
 
+//initialize registration object from Server
 const registrations = {
   registrations: {
     assets: [],

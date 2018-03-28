@@ -12,32 +12,32 @@
             <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
+            <!-- AssetId Column -->
+            <ng-container matColumnDef="assetId">
               <mat-header-cell *matHeaderCellDef> ID. </mat-header-cell>
               <mat-cell *matCellDef="let asset"> {{asset.assetId}}</mat-cell>
             </ng-container>
 
-            <!-- Name Column -->
-            <ng-container matColumnDef="name">
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="serialNum">
               <mat-header-cell *matHeaderCellDef> Serial Num </mat-header-cell>
               <mat-cell *matCellDef="let asset"> {{asset.serialNum}} </mat-cell>
             </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
+            <!-- Location Column -->
+            <ng-container matColumnDef="location">
               <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
               <mat-cell *matCellDef="let asset"> {{asset.location}} </mat-cell>
             </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
+            <!-- Type Column -->
+            <ng-container matColumnDef="type">
               <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
               <mat-cell *matCellDef="let asset"> {{asset.type}} </mat-cell>
             </ng-container>
 
-            <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
+            <!-- User Id Column -->
+            <ng-container matColumnDef="userId">
               <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
               <mat-cell *matCellDef="let asset"> {{asset.userId}} </mat-cell>
             </ng-container>
@@ -47,24 +47,24 @@
           </mat-table>
         </div>
       </mat-tab>
+
+
       <mat-tab label="Tab 2">
         <ng-template mat-tab-label>
           <mat-icon>attach_file</mat-icon>
         </ng-template>
         <div class="demo-tab-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
-          Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
-          In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
-          feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
-          orci enim rutrum enim, vel tempor sapien arcu a tellus.
+          This is the Second Tab. Potentially a table of Users
         </div>
       </mat-tab>
+
       <mat-tab label="Tab 3">
         <ng-template mat-tab-label>
           <mat-icon>printer</mat-icon>
         </ng-template>
-        No content
+        This could be the table of all printers
       </mat-tab>
+
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
