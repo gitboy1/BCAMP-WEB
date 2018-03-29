@@ -7,6 +7,7 @@ import {SidenavComponent} from './layout/content/sidenav/sidenav.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { DetailTableComponent } from './layout/content/detail-table/detail-table.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DetailTableComponent } from './layout/content/detail-table/detail-table
     SidenavComponent,
     NavbarComponent,
     DetailTableComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

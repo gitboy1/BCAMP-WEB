@@ -18,9 +18,6 @@ export class SidenavComponent implements OnInit {
     // {value: 'backup-5', viewValue: 'Backup Servers'},
     // {value: 'physical-5', viewValue: 'Physical Servers'},
   ];
-  toggleSide(): void {
-    this.showSide = !this.showSide;
-  }
 
   constructor() { }
 

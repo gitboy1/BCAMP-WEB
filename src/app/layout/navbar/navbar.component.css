@@ -1,15 +1,26 @@
-/*@import '~bootstrap/dist/css/bootstrap.css';*/
-@import "https://fonts.googleapis.com/css?family=Noto+Sans";
+/*@import "https://fonts.googleapis.com/css?family=Noto+Sans";*/
+@import "https://fonts.googleapis.com/css?family=Roboto:500";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 mat-card {
   background: #3F51B5;
   color: white;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 1.0em;
+  font-size: 14px;
+  font-weight: 500;
   vertical-align: middle;
   padding: 8px 16px;
   width: 100%;
+}
 
+mat-card a{
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+mat-card a:hover{
+  text-decoration: none;
 }
 
 .fill{
@@ -23,8 +34,8 @@ mat-card {
   align-items: center;
 }
 button{
-  padding: 5px;
-  ;
+  padding: 3px;
+
 }
 button:hover{
   background-color: transparent;
