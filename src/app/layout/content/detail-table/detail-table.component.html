@@ -9,37 +9,39 @@
         <div class="example-container mat-elevation-z8">
           <mat-table #table [dataSource]="dataSource">
 
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-
             <!-- AssetId Column -->
-            <ng-container matColumnDef="assetId">
+            <ng-container matColumnDef="position">
               <mat-header-cell *matHeaderCellDef> ID. </mat-header-cell>
-              <mat-cell *matCellDef="let asset"> {{asset.assetId}}</mat-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}}</mat-cell>
             </ng-container>
 
             <!-- Serial Number Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> AssetId </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
             <ng-container matColumnDef="serialNum">
-              <mat-header-cell *matHeaderCellDef> Serial Num </mat-header-cell>
-              <mat-cell *matCellDef="let asset"> {{asset.serialNum}} </mat-cell>
+              <mat-header-cell *matHeaderCellDef> S/N </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.serialNum}} </mat-cell>
+            </ng-container>
+
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="model">
+              <mat-header-cell *matHeaderCellDef> Model </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.model}} </mat-cell>
             </ng-container>
 
             <!-- Location Column -->
-            <ng-container matColumnDef="location">
-              <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
-              <mat-cell *matCellDef="let asset"> {{asset.location}} </mat-cell>
+            <ng-container matColumnDef="weight">
+              <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
             </ng-container>
 
             <!-- Type Column -->
-            <ng-container matColumnDef="type">
-              <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
-              <mat-cell *matCellDef="let asset"> {{asset.type}} </mat-cell>
-            </ng-container>
-
-            <!-- User Id Column -->
-            <ng-container matColumnDef="userId">
-              <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
-              <mat-cell *matCellDef="let asset"> {{asset.userId}} </mat-cell>
+            <ng-container matColumnDef="symbol">
+              <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

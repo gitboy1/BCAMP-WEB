@@ -45,21 +45,21 @@ function getAssets() {
     });
     console.log(result);
     registrations.registrations.assets.push({
-      "id": temp[0],
-      "assetId": temp[1],
-      "serialNum": temp[2],
-      "userId": temp[3],
-      "location": temp[4],
-      "type": temp[5],
-      "productNum": temp[6],
-      "ram": temp[7],
-      "hdType": temp[8],
-      "hdSize": temp[9],
-      "cost": temp[10],
-      "warranty": temp[11],
-      "model": temp[12],
-      "brand": temp[13],
-      "toner": temp[14]
+      id: temp[0],
+      assetId: temp[1],
+      serialNum: temp[2],
+      userId: temp[3],
+      location: temp[4],
+      type: temp[5],
+      productNum: temp[6],
+      ram: temp[7],
+      hdType: temp[8],
+      hdSize: temp[9],
+      cost: temp[10],
+      warranty: temp[11],
+      model: temp[12],
+      brand: temp[13],
+      toner: temp[14]
     });
       json = JSON.stringify(registrations);
       temp = [];
@@ -67,10 +67,13 @@ function getAssets() {
 });
   connection.execSql(request);
 
-  request.on('requestCompleted',function(){
-    getUsers()
-  });
+   request.on('requestCompleted',function(){
+     getUsers();
+   });
 
+  /*request.on('requestCompleted',function(){
+    insertStatement();
+  });*/
 
   request.on('doneProc', function (rowCount) {
     console.log(rowCount + ' rows returned');
@@ -113,7 +116,6 @@ function getUsers() {
   connection.execSql(request);
 
   request.on('doneProc', function (rowCount) {
-    console.log(rowCount + ' rows returned');
     fs.writeFile('registration.json', json);
   });
 }
