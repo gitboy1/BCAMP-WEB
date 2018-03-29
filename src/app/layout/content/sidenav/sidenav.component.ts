@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   showSide = false;
   filters = [
-    {value: 'printer-0', viewValue: 'Printers'},
-    {value: 'keyboard-1', viewValue: 'Laptops'},
-    {value: 'tablet-2', viewValue: 'Tablet'},
+    {value: 'laptop-0', viewValue: 'Laptops'},
+    {value: 'desktop-1', viewValue: 'Desktops'},
+    {value: 'tablet-2', viewValue: 'Tablets'},
     // {value: 'pc-3', viewValue: 'Network Switches'},
     // {value: 'fire-4', viewValue: 'Fire Suppression'},
     // {value: 'fiber-5', viewValue: 'Fibers'},

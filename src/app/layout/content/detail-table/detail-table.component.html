@@ -6,8 +6,13 @@
         <ng-template mat-tab-label>
           <mat-icon>add_to_queue</mat-icon>
         </ng-template>
+        <div class="example-header">
+        </div>
         <div class="example-container mat-elevation-z8">
-          <mat-table #table [dataSource]="dataSource">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+          <mat-table #assetTable [dataSource]="dataSource">
 
             <!-- AssetId Column -->
             <ng-container matColumnDef="position">
@@ -19,6 +24,11 @@
             <ng-container matColumnDef="name">
               <mat-header-cell *matHeaderCellDef> AssetId </mat-header-cell>
               <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+              <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="serialNum">
@@ -54,8 +64,11 @@
         <ng-template mat-tab-label>
           <mat-icon>assignment_ind</mat-icon>
         </ng-template>
-        <div class="demo-tab-content">
-          <mat-table #table [dataSource]="userData">
+        <div class="example-container mat-elevation-z8">
+          <mat-form-field>
+            <input matInput (keyup)="applyUserFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+          <mat-table #userTable [dataSource]="userData">
 
             <!-- AssetId Column -->
             <ng-container matColumnDef="position">
@@ -102,8 +115,11 @@
         <ng-template mat-tab-label>
           <mat-icon>printer</mat-icon>
         </ng-template>
-        <div class="demo-tab-content">
-          <mat-table #table [dataSource]="printerData">
+        <div class="example-container mat-elevation-z8">
+          <mat-form-field>
+            <input matInput (keyup)="applyPrinterFilter($event.target.value)" placeholder="Filter">
+          </mat-form-field>
+          <mat-table #printerTable [dataSource]="printerData">
 
             <!-- AssetId Column -->
             <ng-container matColumnDef="position">

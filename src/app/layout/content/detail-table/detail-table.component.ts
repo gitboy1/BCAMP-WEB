@@ -11,12 +11,31 @@ import * as data from '../../../../server/registration.json';
 })
 
 export class DetailTableComponent {
-  displayedAssetColumns = ['position', 'name', 'serialNum', 'model', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedAssetColumns = ['position', 'name', 'type', 'serialNum', 'model', 'weight', 'symbol'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   displayedUserColumns = ['position', 'firstName'/*, 'lastName'*/, 'email', 'location', 'department'];
-  userData = USER_DATA;
+  userData = new MatTableDataSource(USER_DATA);
   displayedPrinterColumns = ['position', 'name', 'serialNum', 'model', 'weight', 'symbol', 'toner'];
-  printerData = PRINTER_DATA;
+  printerData = new MatTableDataSource(PRINTER_DATA);
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    console.log('Searching for: ' + filterValue);
+    this.dataSource.filter = filterValue;
+  }
+  applyUserFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    console.log('Searching for: ' + filterValue);
+    this.userData.filter = filterValue;
+  }
+  applyPrinterFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    console.log('Searching for: ' + filterValue);
+    this.printerData.filter = filterValue;
+  }
 }
 
 /*export interface Asset {
@@ -127,7 +146,7 @@ const USER_DATA: User[] = [
   {position: 4, firstName: 'Bad', lastName: 'Assets', email: 'BadAss@NewVizProgramming.com', location: 'Missouri Western', department: 'BASS'},
   {position: 5, firstName: 'Test', lastName: 'User', email: 'test@NewVizProgramming.com', location: 'Missouri Western', department: 'CSMP'},
 
-]
+];
 
 
 const ELEMENT_DATA: Asset[] = [
@@ -140,11 +159,11 @@ const ELEMENT_DATA: Asset[] = [
   {position: 8, name: 'BC0008', serialNum: 'ASDFJ54654', model: 'ThinkPad T590', type: 'laptop', weight: 'JCarlisle', symbol: 'Missouri Western'},
   {position: 9, name: 'BC0009', serialNum: 'ASDFF5KJ5', model: 'Prodesk 650 G1', type: 'PC', weight: 'ZEvans', symbol: 'Courthouse'},
   {position: 10, name: 'BC0010', serialNum: '3654ASDFD', model: 'ThinkPad T570', type: 'laptop', weight: 'LYe', symbol: 'Missouri Western'},
-  {position: 11, name: 'BC0011', serialNum: 'ASD5F4321', model: 'FakeDell Super64x', type: 'laptop', weight: 'LYe', symbol: 'Missouri Western'},
+  {position: 11, name: 'BC0011', serialNum: 'ASD5F4321', model: 'FakeDell Super64x', type: 'laptop', weight: 'LYe', symbol: 'Missouri Western'},;
 
 
 const PRINTER_DATA: Printer[] = [
   {position: 4, name: 'BC0004', serialNum: '19954323ZX', model: 'Konica MFP 6200C', weight: 'BadAssets', symbol: 'Fire Station', toner: 'KX_102MICR'},
   ];
   /*  {position: 1, name: 'BC0001', weight: 'ZEvans', symbol: 'Missouri Western' }*/
-];
+]
