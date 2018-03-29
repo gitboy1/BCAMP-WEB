@@ -12,6 +12,19 @@
         <input class="form-control mr-sm-2 input-sm" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
+      <span class="fill"></span>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <span>Administrator</span>
+        </button>
+        <button mat-menu-item>
+          <span>Technician</span>
+        </button>
+      </mat-menu>
     </div>
     <!-- button row ends-->
 

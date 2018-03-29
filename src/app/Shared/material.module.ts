@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule, MatCardModule,
-  MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatListModule, MatTabsModule,
+  MatCheckboxModule, MatFormFieldModule, MatGridListModule, MatListModule, MatMenuModule, MatTabsModule,
 } from '@angular/material';
 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -30,6 +30,7 @@ import {MatTableModule} from '@angular/material/table';
     MatTabsModule,
     MatIconModule,
     MatTableModule,
+    MatMenuModule,
   ],
   exports: [
     MatButtonModule,
@@ -46,6 +47,7 @@ import {MatTableModule} from '@angular/material/table';
     MatTabsModule,
     MatIconModule,
     MatTableModule,
+    MatMenuModule,
   ]
 })
 export class MaterialModule { }
