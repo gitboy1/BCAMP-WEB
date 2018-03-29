@@ -44,8 +44,8 @@
               <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
             </ng-container>
 
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            <mat-header-row *matHeaderRowDef="displayedAssetColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedAssetColumns;"></mat-row>
           </mat-table>
         </div>
       </mat-tab>
@@ -55,7 +55,46 @@
           <mat-icon>assignment_ind</mat-icon>
         </ng-template>
         <div class="demo-tab-content">
-          This is the Second Tab. Potentially a table of Users
+          <mat-table #table [dataSource]="userData">
+
+            <!-- AssetId Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> ID. </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.position}}</mat-cell>
+            </ng-container>
+
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="firstName">
+              <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.lastName}},{{user.firstName}} </mat-cell>
+            </ng-container>
+
+            <!--<ng-container matColumnDef="lastName">
+              <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.lastName}} </mat-cell>
+            </ng-container>-->
+
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+            </ng-container>
+
+            <!-- Location Column -->
+            <ng-container matColumnDef="location">
+              <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.location}} </mat-cell>
+            </ng-container>
+
+            <!-- Type Column -->
+            <ng-container matColumnDef="department">
+              <mat-header-cell *matHeaderCellDef> Department </mat-header-cell>
+              <mat-cell *matCellDef="let user"> {{user.department}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedUserColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedUserColumns;"></mat-row>
+          </mat-table>
         </div>
       </mat-tab>
 
@@ -63,7 +102,54 @@
         <ng-template mat-tab-label>
           <mat-icon>printer</mat-icon>
         </ng-template>
-        This could be the table of all printers
+        <div class="demo-tab-content">
+          <mat-table #table [dataSource]="printerData">
+
+            <!-- AssetId Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> ID. </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.position}}</mat-cell>
+            </ng-container>
+
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef> AssetId </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="serialNum">
+              <mat-header-cell *matHeaderCellDef> S/N </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.serialNum}} </mat-cell>
+            </ng-container>
+
+            <!-- Serial Number Column -->
+            <ng-container matColumnDef="model">
+              <mat-header-cell *matHeaderCellDef> Model </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.model}} </mat-cell>
+            </ng-container>
+
+            <!-- Location Column -->
+            <ng-container matColumnDef="weight">
+              <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+            </ng-container>
+
+            <!-- Type Column -->
+            <ng-container matColumnDef="symbol">
+              <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+            </ng-container>
+
+            <!-- Type Column -->
+            <ng-container matColumnDef="toner">
+              <mat-header-cell *matHeaderCellDef> Toner Type </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.toner}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedPrinterColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedPrinterColumns;"></mat-row>
+          </mat-table>
+        </div>
       </mat-tab>
 
     </mat-tab-group>
