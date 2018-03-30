@@ -31,8 +31,16 @@
     <div class="content-header">
       <button type="button"
               mat-raised-button (click)="drawer.toggle()">
-              Utilities
+        Utilities
       </button>
+      <button type="button"
+              mat-raised-button (click)="drawer.toggle()">
+        Add Asset
+      </button>
+      <button mat-raised-button (click)="openDialog()">Open Dialog</button>
+      <hr>
+      <strong>Result: {{dialogResult}}</strong>
+      <!--<app-popup></app-popup>-->
       <br>
       <br>
       <mat-divider></mat-divider>

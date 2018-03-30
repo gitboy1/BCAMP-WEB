@@ -24,12 +24,14 @@ export class DetailTableComponent {
     console.log('Searching for: ' + filterValue);
     this.dataSource.filter = filterValue;
   }
+
   applyUserFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     console.log('Searching for: ' + filterValue);
     this.userData.filter = filterValue;
   }
+
   applyPrinterFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
@@ -140,30 +142,89 @@ export interface User {
   },
 ];*/
 const USER_DATA: User[] = [
-  {position: 1, firstName: 'Zachary', lastName: 'Evans', email: 'Zevans@NewVizProgramming.com', location: 'Missouri Western', department: 'CSMP'},
-  {position: 2, firstName: 'John', lastName: 'Carlisle', email: 'JC@NewVizProgramming.com', location: 'Missouri Western', department: 'CSMP'},
+  {
+    position: 1,
+    firstName: 'Zachary',
+    lastName: 'Evans',
+    email: 'Zevans@NewVizProgramming.com',
+    location: 'Missouri Western',
+    department: 'CSMP'
+  },
+  {
+    position: 2,
+    firstName: 'John',
+    lastName: 'Carlisle',
+    email: 'JC@NewVizProgramming.com',
+    location: 'Missouri Western',
+    department: 'CSMP'
+  },
   {position: 3, firstName: 'Lisa', lastName: 'Ye', email: 'LYe@NewVizProgramming.com', location: 'Missouri Western', department: 'CSMP'},
-  {position: 4, firstName: 'Bad', lastName: 'Assets', email: 'BadAss@NewVizProgramming.com', location: 'Missouri Western', department: 'BASS'},
+  {
+    position: 4,
+    firstName: 'Bad',
+    lastName: 'Assets',
+    email: 'BadAss@NewVizProgramming.com',
+    location: 'Missouri Western',
+    department: 'BASS'
+  },
   {position: 5, firstName: 'Test', lastName: 'User', email: 'test@NewVizProgramming.com', location: 'Missouri Western', department: 'CSMP'},
 
 ];
 
 
 const ELEMENT_DATA: Asset[] = [
-  {position: 1, name: 'BC0001', serialNum: '123456ABC', model: 'Probook 650 G3', type: 'laptop', weight: 'ZEvans', symbol: 'Missouri Western'},
+  {
+    position: 1,
+    name: 'BC0001',
+    serialNum: '123456ABC',
+    model: 'Probook 650 G3',
+    type: 'laptop',
+    weight: 'ZEvans',
+    symbol: 'Missouri Western'
+  },
   {position: 2, name: 'BC0002', serialNum: '321DALSKD', model: 'Prodesk G3', type: 'PC', weight: 'JCarlisle', symbol: 'Courthouse'},
   {position: 3, name: 'BC0003', serialNum: '1325ASDF', model: 'Inspiron Elite', type: 'laptop', weight: 'LYe', symbol: 'Missouri Western'},
   {position: 5, name: 'BC0005', serialNum: 'AF45D204', model: 'iPad 4', type: 'tablet', weight: 'ZEvans', symbol: 'Missouri Western'},
   {position: 6, name: 'BC0006', serialNum: 'ASDFA54FF', model: 'Probook 650 G3', type: 'laptop', weight: 'JCarlisle', symbol: 'Courthouse'},
-  {position: 7, name: 'BC0007', serialNum: 'AASDSDF654', model: 'Probook 650 G3', type: 'laptop', weight: 'BadAssets', symbol: 'Missouri Western'},
-  {position: 8, name: 'BC0008', serialNum: 'ASDFJ54654', model: 'ThinkPad T590', type: 'laptop', weight: 'JCarlisle', symbol: 'Missouri Western'},
+  {
+    position: 7,
+    name: 'BC0007',
+    serialNum: 'AASDSDF654',
+    model: 'Probook 650 G3',
+    type: 'laptop',
+    weight: 'BadAssets',
+    symbol: 'Missouri Western'
+  },
+  {
+    position: 8,
+    name: 'BC0008',
+    serialNum: 'ASDFJ54654',
+    model: 'ThinkPad T590',
+    type: 'laptop',
+    weight: 'JCarlisle',
+    symbol: 'Missouri Western'
+  },
   {position: 9, name: 'BC0009', serialNum: 'ASDFF5KJ5', model: 'Prodesk 650 G1', type: 'PC', weight: 'ZEvans', symbol: 'Courthouse'},
   {position: 10, name: 'BC0010', serialNum: '3654ASDFD', model: 'ThinkPad T570', type: 'laptop', weight: 'LYe', symbol: 'Missouri Western'},
-  {position: 11, name: 'BC0011', serialNum: 'ASD5F4321', model: 'FakeDell Super64x', type: 'laptop', weight: 'LYe', symbol: 'Missouri Western'},;
+  {
+    position: 11,
+    name: 'BC0011',
+    serialNum: 'ASD5F4321',
+    model: 'FakeDell Super64x',
+    type: 'laptop',
+    weight: 'LYe',
+    symbol: 'Missouri Western'
+  }];
 
 
 const PRINTER_DATA: Printer[] = [
-  {position: 4, name: 'BC0004', serialNum: '19954323ZX', model: 'Konica MFP 6200C', weight: 'BadAssets', symbol: 'Fire Station', toner: 'KX_102MICR'},
-  ];
-  /*  {position: 1, name: 'BC0001', weight: 'ZEvans', symbol: 'Missouri Western' }*/
-]
+  {
+    position: 4,
+    name: 'BC0004',
+    serialNum: '19954323ZX',
+    model: 'Konica MFP 6200C',
+    weight: 'BadAssets',
+    symbol: 'Fire Station',
+    toner: 'KX_102MICR'
+  },
+];
